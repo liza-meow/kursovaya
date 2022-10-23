@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter page</title>
+</head>
+<body>
+    <div align=center>
+        <b>Оформление поставки</b>
+        <p></p>
+    </div>
+    <p><b>Поставщик:</b>{{item[0]}}</p>
+    <p><b>Товар:</b>{{item[1]}}</p>
+    <p><b>Цена, установленная поставщиком:</b>{{item[2]}}</p>
+    <p><b>Специальная цена:</b>{{item[3]}}, при заказе от {{item[4]}} единиц</p>
+    <form action = "#" method = "POST">
+            <p>Количество товара:</p>
+            <p><input type = "text" name = "num" placeholder="Количество товара"/>
+                <input type = "submit" value = "подтвердить" /></p>
+            <p> <font color = "#ff0000"> {{title}} </font> </p>
+    </form>
+        <a href = "/"> Вернуться на главную страницу </a>
+    </div>
+</body>
+</html>

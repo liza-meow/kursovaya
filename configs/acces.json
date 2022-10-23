@@ -1,0 +1,27 @@
+{
+  "Worker": [
+    "basket.intro",
+    "basket.basket_",
+    "basket.enter_num",
+    "basket.basket_buy",
+    "basket.buy_items",
+    "basket.clear_basket_handler"
+  ],
+  "Admin": [
+    "zaprosy.info",
+    "zaprosy.ym_info",
+    "zaprosy.days_info",
+    "basket.intro",
+    "basket.basket_",
+    "basket.enter_num",
+    "basket.basket_buy",
+    "basket.buy_items",
+    "basket.clear_basket_handler"
+    ],
+  "Analytic": [
+    "zaprosy.info",
+    "zaprosy.ym_info",
+    "zaprosy.days_info"
+  ]
+
+}

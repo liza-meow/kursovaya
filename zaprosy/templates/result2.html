@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат запроса</title>
+</head>
+<body>
+    <div align=center>
+        <b> Все сведения о поставщиках, заключивших договора за последние {{day}} дней </b>
+        <p></p>
+        {%if items == "Not Found":%}
+            <p> Поставщиков не найдена </p>
+        {%endif%}
+
+        {%if items != "Not Found":%}
+        <table border = "1">
+            <tr>
+                <td> <b>ФИО</b> </td>
+                <td> <b>Город</b> </td>
+                <td> <b>Номер телефона</b> </td>
+            </tr>
+            {%for x in items%}
+                <tr>
+                    <td align = "center">{{x[0]}}</td>
+                    <td align = "center">{{x[1]}}</td>
+                    <td align = "center">{{x[2]}}</td>
+                </tr>
+            {%endfor%}
+         </table>
+        {%endif%}
+        <p></p>
+        <a href = "/zaprosy/info"> Вернуться в меню запросов </a>
+    </div>
+
+</body>
+</html>

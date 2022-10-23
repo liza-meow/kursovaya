@@ -1,0 +1,51 @@
+{% macro render_item(item, show_form_enter=False,show_form_leave=False) %}
+<div style="border-style: solid; border-color: red; margin: 10px">
+    <p>
+        <span><b>Название товара:</b> {{ item[1] }}</span>
+        <br>
+        {% if show_form_enter %}
+                <span><b>Стоимость за единицу:</b> {{ item[2] }}</span>
+                <br>
+        {% endif %}
+        {% if show_form_leave %}
+            {% if not item[5] %}
+                <span><b>Стоимость за единицу:</b> {{ item[2] }}</span>
+                <br>
+            {% endif %}
+            {% if item[5] %}
+                {% if item[4] > item[5] %}
+                    <span><b>Стоимость за единицу:</b> {{ item[2] }}</span>
+                    <br>
+                {% endif %}
+                {% if item[4] <= item[5] %}
+                    <span><b>Стоимость за единицу:</b> {{ item[3] }}</span>
+                    <br>
+                {% endif %}
+                    <span><b>Количество:</b> {{ item[5] }}</span>
+                    <br>
+                {% if item[6] %}
+                    <span><b>Общая стоимость:</b> {{ item[6] }}</span>
+                    <br>
+                {% endif %}
+             {% endif %}
+        {% endif %}
+    </p>
+    {% if show_form_enter %}
+        <div>
+            <form action="" method="post">
+                <input type="submit" name="btn" value="Добавить">
+                <input type="hidden" name="item_id" value="{{ item[0] }}">
+            </form>
+        </div>
+    {% endif %}
+    {% if show_form_leave %}
+        <div>
+            <form action="" method="post">
+                <input type="submit" name="enter" value="Ввести количество">
+                <input type="submit" name="btn" value="Удалить">
+                <input type="hidden" name="item_id" value="{{ item[0] }}">
+            </form>
+        </div>
+    {% endif %}
+</div>
+{% endmacro %}

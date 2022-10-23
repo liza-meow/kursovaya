@@ -1,0 +1,1 @@
+insert order_z(start_time, total_cost) values(current_date(), "$cost")

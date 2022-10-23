@@ -1,0 +1,1 @@
+select max(o_id) from order_z

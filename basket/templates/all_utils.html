@@ -1,0 +1,20 @@
+{% macro render_item(item, show_form=False) %}
+<div style="border-style: solid; border-color: red; margin: 10px">
+    <p>
+        <span><b>ФИО:</b> {{ item[1] }}</span>
+        <br>
+        <span><b>Город:</b> {{ item[2] }}</span>
+        <br>
+        <span><b>Номер телефона:</b> {{ item[3] }}</span>
+        <br>
+    </p>
+    {% if show_form %}
+        <div>
+            <form action="" method="post">
+                <input type="submit" name="btn" value="Выбрать">
+                <input type="hidden" name="item_id" value="{{ item[0] }}">
+            </form>
+        </div>
+    {% endif %}
+</div>
+{% endmacro %}
